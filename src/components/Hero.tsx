@@ -51,9 +51,9 @@ const Hero: React.FC = () => {
             placeholder="☰ Search for property or location"
             value={query}
             onChange={handleSearch}
-            className="flex-1 p-3  placeholder-gray-700 placeholder:font-medium rounded-l-2xl border border-gray-700 focus:outline-none"
+            className="flex-1 p-3  placeholder-black placeholder:font-medium rounded-l-2xl border border-black focus:outline-none"
           />
-          <button className="bg-blue-600 p-3 rounded-r-2xl text-white hover:bg-blue-700 flex items-center">
+          <button className="bg-black p-3 rounded-r-2xl text-white  flex items-center">
             <Search className="w-5 h-5" />
           </button>
         </div>

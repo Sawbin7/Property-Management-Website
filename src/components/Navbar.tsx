@@ -8,7 +8,9 @@ const Navbar: React.FC = () => {
     <nav className="  bg-white fixed top-0 left-0 w-full shadow-md z-50">
       <div className="container px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <h1 className="text-xl font-semibold">MyRealEstate</h1>
+        <Link to="/" className="text-xl font-semibold">
+          MyRealEstate
+        </Link>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-6 items-center text-gray-800 font-medium">
@@ -16,7 +18,7 @@ const Navbar: React.FC = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/proporty">Properties</Link>
+            <Link to="/proporty"> My Proporty</Link>
           </li>
           <li>
             <Link to="/about">About</Link>

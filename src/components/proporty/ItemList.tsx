@@ -10,7 +10,7 @@ const ItemList = ({ data = [] }: PropType) => {
     return (
       <div className="container flex justify-center items-center py-10 h-[50vh]">
         <h1 className="text-2xl font-mono text-gray-600">
-          Sorry, No Products Available
+          Sorry, No Products Available 🙁
         </h1>
       </div>
     );
