@@ -9,6 +9,9 @@ const Home = () => {
       <Navbar/>
       <Hero/>
       <Body/>
+      <div className="text-3xl text-purple-700">
+        Home Page of the Proporty website
+      </div>
     </>
   );
 };

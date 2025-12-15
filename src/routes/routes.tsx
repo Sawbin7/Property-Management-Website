@@ -5,8 +5,7 @@ import Proporty from "../pages/Proporty";
 import Contact from "../pages/Contact";
 
 import Login from "../pages/Login";
-import Register from "../pages/Register";
-
+import ProportyDetail from "../components/proporty/ProportyDetail";
 
 const AppRoutes = () => {
   return (
@@ -14,10 +13,10 @@ const AppRoutes = () => {
       <Route path="/" element={<Home/>} />
       <Route path="/about" element={<AboutUs />} />
       <Route path="/proporty" element={<Proporty />} />
+      <Route path="/proporty/:id" element={<ProportyDetail />} />
       <Route path="/contact" element={<Contact />} />
-      {/* <Route path="/about" element={<Login />} /> */}
-      <Route path = "/register" element = {<Register/>}/>
-       <Route path = "/signin" element = {<Login/>}/>
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/login" element={<Login />} />
     </Routes>
   );
 };
