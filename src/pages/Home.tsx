@@ -1,7 +1,14 @@
+import Body from "../components/Body";
+import Hero from "../components/Hero";
+import Navbar from "../components/Navbar";
+
 const Home = () => {
   return (
     <>
-      <div className="text-3xl text-purple-700">Home</div>
+     
+      <Navbar/>
+      <Hero/>
+      <Body/>
     </>
   );
 };

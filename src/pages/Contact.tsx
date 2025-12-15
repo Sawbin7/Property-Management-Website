@@ -1,7 +1,11 @@
+import Contactform from "../components/Contactform";
+import Navbar from "../components/Navbar";
+
 const Contact = () => {
   return (
     <>
-      <div>Contact</div>
+      <Navbar/>
+      <Contactform/>
     </>
   );
 };

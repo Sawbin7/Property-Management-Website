@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1,
+    "name": "About Us",
+    "desc": "Since [Year Founded], we have proudly served as the premier real estate brokerage in [City Name]. Our dedication lies in guiding clients through the ever-changing local property market, helping them find not just a house, but a home—or an investment that truly adds value. With years of experience and deep knowledge of the area, we strive to make the real estate process seamless, transparent, and rewarding for every client.",
+    "image": "/images/AboutUs1.png"
+  },
+  {
+    "id": 2,
+    "name": "Our Vision",
+    "desc": "At [Company Name], our team is passionate about connecting people with properties that match their needs and aspirations. We believe real estate is more than transactions—it’s about building relationships, understanding lifestyles, and ensuring that each decision is informed, confident, and aligned with your goals.",
+    "image": "/images/Vision2.png"
+  },
+  {
+    "id": 3,
+    "name": "Our Promises",
+    "desc": "We are committed to upholding the highest standards of professionalism and integrity, which means transparency (clear communication and honest advice at every step), integrity (acting ethically and putting our clients’ best interests first), and personalized service (tailoring our approach to suit your unique needs, whether you are buying, selling, or investing)."
+,
+    "image": "/images/Promise3.png"
+  }
+]

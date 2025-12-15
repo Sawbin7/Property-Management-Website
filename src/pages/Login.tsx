@@ -1,7 +1,11 @@
+import Navbar from "../components/Navbar";
+import SignInForm from "../components/SignInForm";
+
 const Login = () => {
   return (
     <>
-      <div>Login</div>
+      <Navbar/>
+      <SignInForm/>
     </>
   );
 };

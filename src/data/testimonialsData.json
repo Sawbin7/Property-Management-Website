@@ -1,0 +1,22 @@
+
+
+[
+  {
+    "id": 1,
+    "name": "Aryan Maharjan",
+    "image": "/images/personone.png",
+    "feedback": "Amazing service! Very professional."
+  },
+  {
+    "id": 2,
+    "name": "Sarah Rai",
+    "image": "/images/persontwo.png",
+    "feedback": "Found my dream home thanks to them."
+  },
+  {
+    "id": 3,
+    "name": "Amit Shrestha",
+    "image": "/images/Personthree.png",
+    "feedback": "Best real estate experience ever!"
+  }
+]
