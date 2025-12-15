@@ -1,7 +1,13 @@
+import AboutGrid from "../components/AboutGrid";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+
 const AboutUs = () => {
   return (
     <>
-      <div>AboutUs</div>
+      <Navbar/>
+      <AboutGrid/>
+      <Footer/>
     </>
   );
 };
