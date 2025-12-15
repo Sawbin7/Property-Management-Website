@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 interface propData {
   id: number;
   name: string;
@@ -21,7 +23,10 @@ const Item = ({ value }: propType) => {
           alt="Image"
           className="bg-cover bg-no-repeat w-full rounded h-40"
         />
-        <h1 className="text-xl font-bold"> {value.name}</h1>
+        <Link className="text-xl font-bold" to={`/proporty/${value.id}`}>
+          {" "}
+          {value.name}
+        </Link>
         <h1 className="text-md font-bold"> NPR {value.price}</h1>
 
         <div className="space-x-3 font-mono">

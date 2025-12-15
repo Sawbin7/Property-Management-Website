@@ -6,13 +6,12 @@ import ItemList from "./ItemList";
 
 const FilterBar = () => {
   const propertyList: Product[] = propertyListJson as Product[];
-  const [data, setData] = useState<Product[]>(propertyList);
   const [searchData, setSearchData] = useState("");
 
   // Filter states
   const [searchCategory, setSearchCategory] = useState<
-    "land" | "house" | "hotel" | "flat" | "none"
-  >("none");
+    "land" | "house" | "hotel" | "flat" | "all"
+  >("all");
 
   const [availibility, setAvailibility] = useState<
     "available" | "booked" | "notAvailable" | "all"
@@ -23,12 +22,12 @@ const FilterBar = () => {
   const [availabilityOpen, setAvailabilityOpen] = useState(false);
 
   // Filter logic
-  const filteredByName = data.filter((item) =>
+  const filteredByName = propertyList.filter((item) =>
     item.name.toLowerCase().includes(searchData.toLowerCase())
   );
 
   const filteredByCategory = filteredByName.filter((item) => {
-    if (searchCategory === "none") return true;
+    if (searchCategory === "all") return true;
     return item.category === searchCategory;
   });
 
@@ -39,7 +38,7 @@ const FilterBar = () => {
 
   // Handle selection
   const handleCategorySelect = (
-    category: "land" | "house" | "hotel" | "flat" | "none"
+    category: "land" | "house" | "hotel" | "flat" | "all"
   ) => {
     setSearchCategory(category);
     setCategoryOpen(false); // close dropdown after selection
@@ -54,7 +53,7 @@ const FilterBar = () => {
 
   const resetFilters = () => {
     setSearchData("");
-    setSearchCategory("none");
+    setSearchCategory("all");
     setAvailibility("all");
   };
 
