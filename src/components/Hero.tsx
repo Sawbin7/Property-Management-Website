@@ -36,32 +36,36 @@ const Hero: React.FC = () => {
 
   return (
     <div className="relative w-full h-[90vh] flex items-center justify-center">
-
-
       {/* Background Image */}
-      <div className="absolute inset-0 bg-cover bg-center filter blur-[2px]"
+      <div
+        className="absolute inset-0 bg-cover bg-center filter blur-[2px]"
         style={{ backgroundImage: `url(${heroImg})` }}
       ></div>
       <div className="absolute inset-0 bg-black opacity-20"></div>
 
-
-
       {/* Centered Search Box */}
       <div className="relative z-10 w-full max-w-xl">
         <div className="flex">
-          <input type="text" placeholder="☰ Search for property or location" value={query} onChange={handleSearch} className="flex-1 p-3 rounded-l-2xl border border-gray-300 focus:outline-none"/>
+          <input
+            type="text"
+            placeholder="☰ Search for property or location"
+            value={query}
+            onChange={handleSearch}
+            className="flex-1 p-3  placeholder-gray-700 placeholder:font-medium rounded-l-2xl border border-gray-700 focus:outline-none"
+          />
           <button className="bg-blue-600 p-3 rounded-r-2xl text-white hover:bg-blue-700 flex items-center">
             <Search className="w-5 h-5" />
           </button>
         </div>
 
-
-
         {/* Search results ko laai */}
         {results.length > 0 && (
           <div className="absolute top-full mt-2 w-full bg-white rounded-xl shadow-lg overflow-hidden max-h-60 overflow-y-auto z-20">
             {results.map((item) => (
-              <div key={item.id} className="p-3 border-b last:border-b-0 hover:bg-gray-100 cursor-pointer">
+              <div
+                key={item.id}
+                className="p-3 border-b last:border-b-0 hover:bg-gray-100 cursor-pointer"
+              >
                 <h3 className="font-semibold">{item.name}</h3>
                 <p className="text-gray-500">{item.location}</p>
               </div>

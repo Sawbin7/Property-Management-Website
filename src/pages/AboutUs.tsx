@@ -5,9 +5,11 @@ import Navbar from "../components/Navbar";
 const AboutUs = () => {
   return (
     <>
-      <Navbar/>
-      <AboutGrid/>
-      <Footer/>
+      <Navbar />
+      <div className="container">
+        <AboutGrid />
+      </div>
+      <Footer />
     </>
   );
 };

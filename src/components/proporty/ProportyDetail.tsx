@@ -1,7 +1,8 @@
 import type { Product } from "../../types/PropertyData.type";
 import proporttyData from "../../data/propertyData.json";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useState } from "react";
+import Navbar from "../Navbar";
 
 const ProportyDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -26,8 +27,9 @@ const ProportyDetail = () => {
 
   return (
     <>
-      <Link to="/proporty"> Back to Proporty </Link>
+      <Navbar />
 
+      <div className="mt-15"> </div>
       <div> Name: {proporty.name} </div>
       <div> Description: {proporty.description}</div>
 
