@@ -5,17 +5,25 @@ const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="bg-white fixed top-0 left-0 w-full shadow-md z-50">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <nav className="  bg-white fixed top-0 left-0 w-full shadow-md z-50">
+      <div className="container px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <h1 className="text-xl font-semibold">MyRealEstate</h1>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-6 items-center text-gray-800 font-medium">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/proporty">Properties</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/proporty">Properties</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
 
           <li>
             <Link
@@ -48,10 +56,18 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu */}
       {open && (
         <div className="md:hidden bg-white shadow-lg px-6 py-4 space-y-4 text-gray-800 font-medium">
-          <p><Link to="/">Home</Link></p>
-          <p><Link to="/proporty">Properties</Link></p>
-          <p><Link to="/about">About</Link></p>
-          <p><Link to="/contact">Contact</Link></p>
+          <p>
+            <Link to="/">Home</Link>
+          </p>
+          <p>
+            <Link to="/proporty">Properties</Link>
+          </p>
+          <p>
+            <Link to="/about">About</Link>
+          </p>
+          <p>
+            <Link to="/contact">Contact</Link>
+          </p>
 
           <Link
             to="/register"

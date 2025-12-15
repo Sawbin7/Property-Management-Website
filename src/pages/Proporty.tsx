@@ -1,11 +1,16 @@
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 import FilterBar from "../components/proporty/FilterBar";
-import ItemList from "../components/proporty/ItemList";
 
 const Proporty = () => {
   return (
     <>
-      <FilterBar />
-      <ItemList />
+      <Navbar />
+
+      <div className="mt-25 mb-10 space-y-5 ">
+        <FilterBar />
+      </div>
+      <Footer />
     </>
   );
 };

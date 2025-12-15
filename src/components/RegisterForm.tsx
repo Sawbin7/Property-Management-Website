@@ -28,7 +28,7 @@ const RegisterForm: React.FC = () => {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
-     const target = e.target as HTMLInputElement;
+    const target = e.target as HTMLInputElement;
     const { name, type, checked, value } = target;
     setForm({
       ...form,
@@ -52,7 +52,9 @@ const RegisterForm: React.FC = () => {
 
   return (
     <div className="max-w-lg mx-auto bg-white shadow-xl p-8 rounded-xl mt-25  mb-20">
-      <h2 className="text-2xl font-bold text-black mb-6 text-center">Sign Up</h2>
+      <h2 className="text-2xl font-bold text-black mb-6 text-center">
+        Register
+      </h2>
 
       <form onSubmit={handleSubmit} className="space-y-5">
         {/* Name fields */}
@@ -180,7 +182,10 @@ const RegisterForm: React.FC = () => {
             className="w-4 h-4"
           />
           <label className="text-gray-700 text-sm">
-            I agree to the <a href="/terms" className="text-blue-500 underline">terms and conditions</a>
+            I agree to the{" "}
+            <a href="/terms" className="text-blue-500 underline">
+              terms and conditions
+            </a>
           </label>
         </div>
 
