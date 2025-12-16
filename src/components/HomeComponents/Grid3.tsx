@@ -1,6 +1,6 @@
 import React from "react";
-import HouseImg from "../assets/High.png";
-import LowImg from "../assets/low.png";
+import HouseImg from "../../assets/High.png";
+import LowImg from "../../assets/low.png";
 import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

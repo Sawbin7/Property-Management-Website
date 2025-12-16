@@ -1,7 +1,6 @@
-import AboutGrid from "../components/AboutGrid";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
-
+import AboutGrid from "../components/AboutComponents/AboutGrid";
+import Footer from "../components/GlobalComponents/Footer";
+import Navbar from "../components/GlobalComponents/Navbar";
 const AboutUs = () => {
   return (
     <>

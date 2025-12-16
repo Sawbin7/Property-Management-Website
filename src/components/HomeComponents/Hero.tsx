@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import heroImg from "../assets/Building.png";
+import heroImg from "../../assets/Building.png";
 import { Search } from "lucide-react";
 
 interface Property {

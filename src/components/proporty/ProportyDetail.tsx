@@ -2,7 +2,7 @@ import type { Product } from "../../types/PropertyData.type";
 import proporttyData from "../../data/propertyData.json";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import Navbar from "../Navbar";
+import Navbar from "../GlobalComponents/Navbar";
 
 const ProportyDetail = () => {
   const { id } = useParams<{ id: string }>();

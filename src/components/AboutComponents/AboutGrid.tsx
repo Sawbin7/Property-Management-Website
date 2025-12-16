@@ -1,5 +1,5 @@
 import React from "react";
-import rawAboutData from "../data/Aboutus.json";
+import rawAboutData from "../../data/Aboutus.json";
 
 interface About {
   id: number;
@@ -22,7 +22,11 @@ const AboutGrid: React.FC = () => {
             className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center "
           >
             {/* TEXT */}
-            <div className={` lg:col-span-7 text-justify ${isEven ? "lg:order-1" : "lg:order-2" }`}>
+            <div
+              className={` lg:col-span-7 text-justify ${
+                isEven ? "lg:order-1" : "lg:order-2"
+              }`}
+            >
               <h1 className="text-3xl sm:text-3xl font-bold mb-4 mt-0.5">
                 {item.name}
               </h1>
@@ -32,11 +36,16 @@ const AboutGrid: React.FC = () => {
             </div>
 
             {/* IMAGE */}
-            <div className={`lg:col-span-5 flex justify-center lg:justify-start  ${isEven ? "lg:order-2" : "lg:order-1"}
+            <div
+              className={`lg:col-span-5 flex justify-center lg:justify-start  ${
+                isEven ? "lg:order-2" : "lg:order-1"
+              }
               `}
             >
               <img
-                src={item.image} alt={item.name} className="
+                src={item.image}
+                alt={item.name}
+                className="
                   w-full
                   h-[40vh]
                   max-w-sm

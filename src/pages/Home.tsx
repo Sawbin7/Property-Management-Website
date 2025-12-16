@@ -1,6 +1,6 @@
-import Body from "../components/Body";
-import Hero from "../components/Hero";
-import Navbar from "../components/Navbar";
+import Body from "../components/HomeComponents/Body";
+import Hero from "../components/HomeComponents/Hero";
+import Navbar from "../components/GlobalComponents/Navbar";
 
 const Home = () => {
   return (

@@ -1,11 +1,11 @@
-import Navbar from "../components/Navbar";
-import SignInForm from "../components/SignInForm";
+import SignInForm from "../components/formComponents/SignInForm";
+import Navbar from "../components/GlobalComponents/Navbar";
 
 const Login = () => {
   return (
     <>
-      <Navbar/>
-      <SignInForm/>
+      <Navbar />
+      <SignInForm />
     </>
   );
 };

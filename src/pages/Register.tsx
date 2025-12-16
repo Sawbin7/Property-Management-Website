@@ -1,11 +1,11 @@
-import Navbar from "../components/Navbar";
-import RegisterForm from "../components/RegisterForm";
+import Navbar from "../components/GlobalComponents/Navbar";
+import RegisterForm from "../components/formComponents/RegisterForm";
 
 const Register = () => {
   return (
     <>
-    <Navbar/>
-      <RegisterForm/>
+      <Navbar />
+      <RegisterForm />
     </>
   );
 };

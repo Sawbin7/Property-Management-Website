@@ -1,6 +1,6 @@
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
 import FilterBar from "../components/proporty/FilterBar";
+import Navbar from "../components/GlobalComponents/Navbar";
+import Footer from "../components/GlobalComponents/Footer";
 
 const Proporty = () => {
   return (
