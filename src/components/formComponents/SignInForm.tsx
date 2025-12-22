@@ -1,72 +1,52 @@
-import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import FormComponent from "./auth/FormComponent";
+import { signInSchema, type signInType } from "../../schema/auth/Signin.schema";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-interface SignInData {
-  email: string;
-  password: string;
-}
-
-const SignInForm: React.FC = () => {
-  const [form, setForm] = useState<SignInData>({
-    email: "",
-    password: "",
+const SignInForm = () => {
+  const {
+    register,
+    reset,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(signInSchema),
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setForm({
-      ...form,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Sign In Submitted:", form);
-    alert("Sign In Successful!");
+  const onSubmit = (data: signInType) => {
+    console.log(data);
+    reset();
   };
 
   return (
-    <div className="max-w-md mx-auto  bg-white shadow-xl p-8 rounded-xl mt-20">
-      <h2 className="text-2xl font-bold text-black mb-6 text-center">Sign In</h2>
+    <>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className=" max-w-md  mx-auto flex flex-col  justify-center shadow-lg p-4 space-y-6 mt-20 "
+      >
+        <h1 className="font-mono text-center font-bold text-2xl">
+          Sign-In Form
+        </h1>
 
-      <form onSubmit={handleSubmit} className="space-y-5">
-        {/* Email */}
-        <div>
-          <label className="block font-medium mb-1">Email</label>
-          <input
-            type="email"
-            name="email"
-            value={form.email}
-            onChange={handleChange}
-            className="w-full border border-gray-300 p-3 rounded-lg focus:border-gray-500 outline-none"
-            placeholder="Enter your email"
-            required
-          />
-        </div>
+        <FormComponent
+          type="email"
+          label="email"
+          {...register("email")}
+          error={errors.email}
+        />
+        <FormComponent
+          type="password"
+          label="password"
+          {...register("password")}
+          error={errors.password}
+        />
 
-        {/* Password */}
-        <div>
-          <label className="block font-medium mb-1">Password</label>
-          <input
-            type="password"
-            name="password"
-            value={form.password}
-            onChange={handleChange}
-            className="w-full border border-gray-300 p-3 rounded-lg focus:border-gray-500 outline-none"
-            placeholder="Enter your password"
-            required
-          />
-        </div>
-
-        {/* Submit button */}
-        <button
-          type="submit"
-          className="w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-500 transition"
-        >
-          Sign In
+        <button className="bg-black text-white  w-full  py-2  rounded">
+          {" "}
+          Sign In{" "}
         </button>
       </form>
-    </div>
+    </>
   );
 };
 

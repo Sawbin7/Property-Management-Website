@@ -4,7 +4,15 @@ import { useState } from "react";
 
 type Props = {
   label: string;
-  type: "text" | "email" | "number" | "radio" | "select" | "date" | "password";
+  type:
+    | "text"
+    | "email"
+    | "number"
+    | "radio"
+    | "select"
+    | "date"
+    | "password"
+    | "textarea";
   options?: string[];
   error?: { message?: string };
 } & UseFormRegisterReturn<string>;
@@ -19,7 +27,7 @@ const FormComponent = ({
   const [visible, setVisible] = useState(false);
 
   return (
-    <div className="flex flex-col mt-2 mb-4 px-2">
+    <div className="flex flex-col  mt-2 mb-4 ">
       {(type === "text" || type === "email" || type === "number") && (
         <input
           type={type}
@@ -45,6 +53,16 @@ const FormComponent = ({
               {visible ? <Eye /> : <EyeOff />}
             </span>
           </div>
+        </>
+      )}
+
+      {type === "textarea" && (
+        <>
+          <textarea
+            placeholder={label}
+            className="w-full p-2  border h-35 text-start rounded outline-none focus:border-2 "
+            {...props}
+          />
         </>
       )}
 

@@ -1,86 +1,70 @@
-import React, { useState } from "react";
+import Navbar from "../GlobalComponents/Navbar";
+import {
+  ContactSchema,
+  type ContactType,
+} from "../../schema/user/Contact.schema";
+import FormComponent from "./auth/FormComponent";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-interface FormData {
-  name: string;
-  email: string;
-  message: string;
-}
+const Contactform = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(ContactSchema),
 
-const Contactform: React.FC = () => {
-  const [form, setForm] = useState<FormData>({
-    name: "",
-    email: "",
-    message: "",
+    defaultValues: {
+      userName: "",
+      email: "",
+      message: "",
+    },
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value, // dynamic key
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form Submitted:", form);
-    alert("Message Sent!");
+  const contactSubmit = (data: ContactType) => {
+    console.log(data);
+    reset();
   };
 
   return (
-    <div className="max-w-lg mx-auto mt-30 bg-white shadow-xl p-8 rounded-xl">
-      <h2 className="text-2xl font-bold text-black mb-6 text-center">Contact Us</h2>
+    <>
+      <Navbar />
 
-      <form onSubmit={handleSubmit} className="space-y-5">
-
-        <div>
-          <label className="block font-medium mb-1 mr-3">Name</label>
-          <input
-            type="text"
-            name="name"
-            value={form.name}
-            onChange={handleChange}
-            className=" border border-gray-300 p-3 rounded-lg focus:border-gray-500 outline-none"
-            placeholder="First name"
-            required
-          /><span><input type = "ml-2 " name = "name" value = {form.name} onChange = {handleChange} className="border border-gray-300 p-3 rounded-lg focus:border-gray-500 outline-none"
-            placeholder="Last name" required/></span>
-        </div>
-
-        <div >
-          <label className="block font-medium mb-1">Email</label>
-          <input
-            type="email"
-            name="email"
-            value={form.email}
-            onChange={handleChange}
-            className="w-full border border-gray-300 p-3 rounded-lg focus:border-gray-500 outline-none"
-            placeholder="Enter your email"
-            required
-          />
-        </div>
-
-        <div>
-          <label className="block font-medium mb-1">Message</label>
-          <textarea
-            name="message"
-            value={form.message}
-            onChange={handleChange}
-            rows={5}
-            className="w-full border border-gray-300 p-3 rounded-lg focus:border-gray-500 outline-none"
-            placeholder="Write your message"
-            required
-          ></textarea>
-        </div>
-
+      <form
+        onSubmit={handleSubmit(contactSubmit)}
+        className="max-w-md  mx-auto flex flex-col  justify-center shadow-lg p-4 space-y-6 mt-20  "
+      >
+        <h1 className="font-mono text-center font-bold text-2xl">
+          Contact Form
+        </h1>
+        <FormComponent
+          label="UserName"
+          type="text"
+          {...register("userName")}
+          error={errors.userName}
+        />
+        <FormComponent
+          label="email"
+          type="email"
+          {...register("email")}
+          error={errors.email}
+        />
+        <FormComponent
+          label="Enter your message"
+          type="textarea"
+          {...register("message")}
+          error={errors.message}
+        />
         <button
           type="submit"
-          className="w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-500 transition"
+          className="bg-black text-white  w-full  py-2  rounded"
         >
-          Send Message
-        </button>
-
+          Submit
+        </button>{" "}
       </form>
-    </div>
+    </>
   );
 };
 
